@@ -19,14 +19,14 @@ export class validateur{
     }
   }
 
-  static longueurMinimum(min: number, max: number): ValidatorFn {
+  static longueurMinimum(min: number): ValidatorFn {
     return (c: AbstractControl): { [key: string]: boolean } | null => {
-      if ( c.value.trim() == '') {
+      if ( c.value.trim() <= min ) {
         return {'plage': false};
 
       }
 
-      if (c.value != ' '.repeat(50)){
+      if (c.value.trim() >= min){
         return {'plage': true};
       }
 

@@ -53,9 +53,9 @@ describe('longueurMinimum Validator', () => {
     expect(result['plage']).toBe(true);
   })
 
-  it ('plage pour la valeur valide 3 espaces plus mots et 3 espaces', () => {
-    let control = { value: ' '.repeat(3) + 'blahblahblah' + ' '.repeat(3)};
-    let validator = validateur.sansEspaces();
+  it ('plage pour la valeur valide 2 espaces et 1 char', () => {
+    let control = { value: ' '.repeat(2) + 'b' };
+    let validator = validateur.longueurMinimum(3);
     let result = validator(control as AbstractControl);
     expect(result['plage']).toBe(true);
   })
