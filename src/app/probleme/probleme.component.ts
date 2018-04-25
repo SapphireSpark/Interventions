@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, RequiredValidator } from '@angular/forms';
 
 @Component({
   selector: 'Inter-probleme',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProblemeComponent implements OnInit {
 
-  constructor() { }
+  problemeForm: FormGroup
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.problemeForm = this.fb.group({
+        prenom: ['',[Validators.minLength(0)]],
+        // espaces: ['',[Validators.range(1, 50)]]
+    });
   }
 
 }

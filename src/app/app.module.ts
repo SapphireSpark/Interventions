@@ -9,6 +9,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AcceuilComponent } from './acceuil/acceuil.component';
 import { ProblemeComponent } from './probleme/probleme.component';
 import { RouterModule } from '@angular/router/src/router_module';
+import { ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RouterModule } from '@angular/router/src/router_module';
     BrowserModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
