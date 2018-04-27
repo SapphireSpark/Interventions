@@ -18,7 +18,7 @@
                   formControlName="prenom"
                   [ngClass]="{'is-invalid': (problemeForm.get('prenom').touched ||
                   problemeForm.get('prenom').dirty) &&
-                  problemeForm.get('prenom').errors.plage  ,
+                  !problemeForm.get('prenom').errors.plage  ,
                   'is-valid': (problemeForm.get('prenom').touched ||
                   problemeForm.get('prenom').dirty) &&
                   problemeForm.get('prenom').errors.plage }"
@@ -28,14 +28,14 @@
                 <span class="form-text" *ngIf="(problemeForm.get('prenom').touched ||
                 problemeForm.get('prenom').dirty) &&
                 problemeForm.get('prenom').errors">
-                  <span *ngIf="problemeForm.get('prenom').errors.plage">
+                  <span *ngIf="problemeForm.get('prenom').errors.sansEspaces">
                       <small class="text-muted">
                         Veuillez entrer plus de caracteres
                       </small>
                   </span>
-                  <span *ngIf="problemeForm.get('prenom').errors.required">
+                  <span *ngIf="problemeForm.get('prenom').errors.plage">
                       <small class="text-muted">
-                        Merci de saisir votre prénom
+                        Merci de saisir votre prénom. Veuillez entrer plus de characteres
                       </small>
                   </span>
                 </span>

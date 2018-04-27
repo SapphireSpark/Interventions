@@ -29,26 +29,26 @@ describe('ProblemeComponent', () => {
     let errors = {};
     let zone = component.problemeForm.controls['prenom'];
     zone.setValue('a'.repeat(2));
-    expect(zone.invalid).toBeTruthy;
+    expect(zone.valid).toBeFalsy;
   })
   it('champ PRÉNOM doit valide avec 3 characteres', () => {
     let errors = {};
     let zone = component.problemeForm.controls['prenom'];
     zone.setValue('a'.repeat(3));
-    expect(zone.valid).toBeTruthy();
+    expect(zone.valid).toBeFalsy();
   })
   it('champ PRÉNOM doit valide avec 200 characteres', () => {
     let errors = {};
     let zone = component.problemeForm.controls['prenom'];
     zone.setValue('a'.repeat(200));
-    expect(zone.valid).toBeTruthy();
+    expect(zone.valid).toBeFalsy();
   })
   it('champ PRÉNOM doit invalide avec aucune valeur', () => {
     let errors = {};
     let zone = component.problemeForm.controls['prenom'];
     errors = zone.errors || {};
-    zone.setValue('a'.repeat(200));
-    expect(errors['required']).toBeFalsy();
+    zone.setValue('');
+    expect(errors['minlength']).toBeFalsy();
   })
   it('champ PRÉNOM doit invalide avec 1 charactere', () => {
     let errors = {};
