@@ -18,17 +18,17 @@
                   formControlName="prenom"
                   [ngClass]="{'is-invalid': (problemeForm.get('prenom').touched ||
                   problemeForm.get('prenom').dirty) &&
-                  problemeForm.get('prenom').valid  ,
+                  problemeForm.get('prenom').errors.plage  ,
                   'is-valid': (problemeForm.get('prenom').touched ||
                   problemeForm.get('prenom').dirty) &&
-                  problemeForm.get('prenom').valid }"
+                  problemeForm.get('prenom').errors.plage }"
                   />
 
                 <small id="prenomHelp" class="form-text text-muted"></small>
                 <span class="form-text" *ngIf="(problemeForm.get('prenom').touched ||
                 problemeForm.get('prenom').dirty) &&
                 problemeForm.get('prenom').errors">
-                  <span *ngIf="problemeForm.get('prenom').errors.minlength">
+                  <span *ngIf="problemeForm.get('prenom').errors.plage">
                       <small class="text-muted">
                         Veuillez entrer plus de caracteres
                       </small>

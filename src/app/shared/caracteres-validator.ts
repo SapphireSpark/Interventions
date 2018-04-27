@@ -21,12 +21,12 @@ export class validateur{
 
   static longueurMinimum(min: number): ValidatorFn {
     return (c: AbstractControl): { [key: string]: boolean } | null => {
-      if ( c.value.trim() <= min ) {
+      if ( c.value.trim() <= min && (isNaN(c.value))) {
         return {'plage': false};
 
       }
 
-      if (c.value.trim() >= min){
+      if ( c.value.trim() <= min && (isNaN(c.value))){
         return {'plage': true};
       }
 
