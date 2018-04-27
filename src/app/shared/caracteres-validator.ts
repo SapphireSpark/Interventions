@@ -9,10 +9,8 @@ export class validateur{
         return {'plage': false};
 
       }
-
-      if (c.value != ' '.repeat(50)){
         return {'plage': true};
-      }
+
 
       
 
@@ -25,10 +23,9 @@ export class validateur{
         return {'plage': false};
 
       }
-
-      if ( c.value.trim() <= min && (isNaN(c.value))){
+      
         return {'plage': true};
-      }
+
 
       
 
