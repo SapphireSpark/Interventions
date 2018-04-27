@@ -53,7 +53,7 @@ describe('longueurMinimum Validator', () => {
     expect(result['plage']).toBe(true);
   })
 
-  it ('plage pour la valeur valide 1 espaces et 2 char', () => {
+  it ('plage pour la valeur invalide 1 espaces et 2 char', () => {
     let control = { value: ' aa' };
     let validator = validateur.longueurMinimum(3);
     let result = validator(control as AbstractControl);
@@ -61,7 +61,7 @@ describe('longueurMinimum Validator', () => {
   })
 
 
-it ('plage pour la valeur valide 2 espaces et 1 char', () => {
+it ('plage pour la valeur invalide 2 espaces et 1 char', () => {
   let control = { value: ' '.repeat(2) + 'a' };
   let validator = validateur.longueurMinimum(3);
   let result = validator(control as AbstractControl);

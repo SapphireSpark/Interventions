@@ -24,18 +24,17 @@
                   problemeForm.get('prenom').errors.plage }"
                   />
 
-                <small id="prenomHelp" class="form-text text-muted"></small>
                 <span class="form-text" *ngIf="(problemeForm.get('prenom').touched ||
                 problemeForm.get('prenom').dirty) &&
                 problemeForm.get('prenom').errors">
-                  <span *ngIf="problemeForm.get('prenom').errors.sansEspaces">
+                  <span *ngIf="!problemeForm.get('prenom').errors.sansEspaces">
                       <small class="text-muted">
-                        Veuillez entrer plus de caracteres
+                        Merci de saisir votre prénom.
                       </small>
                   </span>
-                  <span *ngIf="problemeForm.get('prenom').errors.plage">
+                  <span *ngIf="!problemeForm.get('prenom').errors.plage">
                       <small class="text-muted">
-                        Merci de saisir votre prénom. Veuillez entrer plus de characteres
+                        Veuillez entrer plus de characteres
                       </small>
                   </span>
                 </span>
